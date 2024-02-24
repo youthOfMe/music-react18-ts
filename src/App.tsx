@@ -1,11 +1,22 @@
 import React, { Suspense, memo } from 'react'
 import { useRoutes } from 'react-router-dom'
 import routes from './router'
+import { shallowEqual, useSelector } from 'react-redux'
+
 
 function App() {
+  const { count, message } = useSelector(
+    (state) => ({
+      count: state.counter.count,
+      message: state.counter.message
+    }),
+    shallowEqual
+  )
+
   return (
     <div className="App">
-      <div>1</div>
+      <h2>当前计数: {count}</h2>
+      <h2>当前消息: {message}</h2>
       <Suspense fallback="">
         <div className='main'>{useRoutes(routes)}</div>
       </Suspense>
