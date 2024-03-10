@@ -3,10 +3,16 @@ import { useRoutes } from 'react-router-dom'
 import routes from './router'
 import { shallowEqual, useSelector } from 'react-redux'
 
+interface IStoreState {
+  counter: {
+    count: number
+    message: string
+  }
+}
 
 function App() {
   const { count, message } = useSelector(
-    (state) => ({
+    (state: IStoreState) => ({
       count: state.counter.count,
       message: state.counter.message
     }),
