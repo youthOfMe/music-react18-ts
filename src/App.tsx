@@ -3,7 +3,8 @@ import { useRoutes } from 'react-router-dom'
 import routes from './router'
 import { shallowEqual, useSelector } from 'react-redux'
 import store from './store'
-import type { IRootState } from './store'
+import { useHYSelector } from './store'
+// import type { IRootState } from './store'
 
 // interface IStoreState {
 //   counter: {
@@ -17,8 +18,8 @@ import type { IRootState } from './store'
 // type IRootState = ReturnType<GetStatenType>
 
 function App() {
-  const { count, message } = useSelector(
-    (state: IRootState) => ({
+  const { count, message } = useHYSelector(
+    (state) => ({
       count: state.counter.count,
       message: state.counter.message
     }),
