@@ -1,7 +1,6 @@
 import React, { Suspense, memo } from 'react'
-import { useRoutes } from 'react-router-dom'
+import { Link, useRoutes } from 'react-router-dom'
 import routes from './router'
-import store from './store'
 import { useHYSelector, useAppDispatch, shallowEqualApp } from './store'
 import { changeMessageAction } from './store/modules/counter'
 // import type { IRootState } from './store'
@@ -36,6 +35,12 @@ function App() {
 
   return (
     <div className="App">
+      <div className='nav'>
+        <Link to='/discover'>发现音乐</Link>
+        <Link to='/mine'>我的音乐</Link>
+        <Link to='/focus'>我得关注</Link>
+        <Link to='/download'>下载客户端</Link>
+      </div>
       <h2>当前计数: {count}</h2>
       <h2>当前消息: {message}</h2>
       <button onClick={handleChangeMessage}>改变消息</button>
