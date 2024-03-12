@@ -1,7 +1,9 @@
-const {
-  REACT_APP_BASE_URL,
-  REACT_APP_TIME_OUT
-} = process.env
+// const {
+//   REACT_APP_BASE_URL,
+//   REACT_APP_TIME_OUT
+// } = process.env
 
-export const BASE_URL = REACT_APP_BASE_URL
-export const TIME_OUT = REACT_APP_TIME_OUT
+console.log(process.env.REACT_APP_BASE_URL)
+
+export const BASE_URL = process.env.REACT_APP_BASE_URL
+export const TIME_OUT = process.env.REACT_APP_TIME_OUT
