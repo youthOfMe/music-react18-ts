@@ -31,5 +31,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
     '@typescript-eslint/no-non-null-assertion': 'warn',
+    'react/prop-types': 'off',
   },
 }
