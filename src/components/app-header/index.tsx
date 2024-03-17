@@ -10,7 +10,11 @@ const AppHerder: React.FC<IProps> = (props) => {
   return (
     <HeaderWrapper>
       <div className="content wrap-v1">
-        <HeaderLeft></HeaderLeft>
+        <HeaderLeft>
+          <a className="logo sprite_01" href="/">
+            网易云音乐
+          </a>
+        </HeaderLeft>
         <HeaderRight></HeaderRight>
       </div>
       <div className="divider"></div>
