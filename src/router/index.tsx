@@ -1,7 +1,6 @@
-import React ,{ lazy } from "react";
-import { Navigate } from "react-router-dom";
+import React, { lazy } from 'react'
+import { Navigate } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
-
 
 // 分包处理
 const Discover = lazy(() => import('@/views/discover'))
@@ -26,7 +25,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/discover',
-        element: <Navigate to="/discover/recommend"/>
+        element: <Navigate to="/discover/recommend" />,
       },
       {
         path: '/discover/recommend',
@@ -38,34 +37,34 @@ const routes: RouteObject[] = [
       },
       {
         path: '/discover/songs',
-        element: <Songs />
+        element: <Songs />,
       },
       {
         path: '/discover/djradio',
-        element: <Djradio />
+        element: <Djradio />,
       },
       {
         path: '/discover/artist',
-        element: <Artist />
+        element: <Artist />,
       },
       {
         path: '/discover/album',
-        element: <Album />
-      }
-    ]
+        element: <Album />,
+      },
+    ],
   },
   {
     path: '/mine',
-    element: <Mine />
+    element: <Mine />,
   },
   {
     path: '/focus',
-    element: <Focus />
+    element: <Focus />,
   },
   {
     path: '/download',
-    element: <Dowload />
-  }
+    element: <Dowload />,
+  },
 ]
 
 export default routes

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const counterSlice = createSlice({
   name: 'counter',
@@ -9,8 +9,8 @@ const counterSlice = createSlice({
   reducers: {
     changeMessageAction(state, { payload }) {
       state.message = payload
-    }
-  }
+    },
+  },
 })
 
 export const { changeMessageAction } = counterSlice.actions

@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import type { ReactNode } from "react";
-import { HeaderLeft, HeaderRight, HeaderWrapper } from "./style";
+import React, { memo } from 'react'
+import type { ReactNode } from 'react'
+import { HeaderLeft, HeaderRight, HeaderWrapper } from './style'
 
 interface IProps {
   children?: ReactNode

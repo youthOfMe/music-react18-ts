@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react'
 
 interface IProps {
   name: string
@@ -26,15 +26,22 @@ class Template2 extends PureComponent<IProps, IState, ISnapshot> {
   name = 'aaa'
   state = {
     message: 'Hello',
-    counter: 99
+    counter: 99,
   }
 
   // 在组件更新之前给组件的状态搞一个快照
-  getSnapshotBeforeUpdate(prevProps: Readonly<IProps>, prevState: Readonly<IState>): ISnapshot | null {
+  getSnapshotBeforeUpdate(
+    prevProps: Readonly<IProps>,
+    prevState: Readonly<IState>,
+  ): ISnapshot | null {
     return { address: '1231' }
   }
 
-  componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<IState>, snapshot?: ISnapshot | undefined): void {
+  componentDidUpdate(
+    prevProps: Readonly<IProps>,
+    prevState: Readonly<IState>,
+    snapshot?: ISnapshot | undefined,
+  ): void {
     console.log(666)
   }
 

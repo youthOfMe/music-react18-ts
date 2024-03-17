@@ -22,13 +22,15 @@ const Recommend: React.FC<IProps> = () => {
   const [banners, setBanners] = useState<IBannerData[]>([])
 
   useEffect(() => {
-    xhRequest.get({
-      headers: new AxiosHeaders(),
-      url: '/banner'
-    }).then((res) => {
-      console.log(res)
-      setBanners(res.banners)
-    })
+    xhRequest
+      .get({
+        headers: new AxiosHeaders(),
+        url: '/banner',
+      })
+      .then((res) => {
+        console.log(res)
+        setBanners(res.banners)
+      })
   }, [])
 
   return (

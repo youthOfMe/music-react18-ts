@@ -5,9 +5,7 @@ interface IProps {
 }
 
 const Artist: React.FC<IProps> = () => {
-  return (
-    <div>Artist</div>
-  )
+  return <div>Artist</div>
 }
 
 export default memo(Artist)

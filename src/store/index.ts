@@ -1,12 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './modules/counter'
-import { useSelector, TypedUseSelectorHook, useDispatch, shallowEqual } from "react-redux";
-
+import { useSelector, TypedUseSelectorHook, useDispatch, shallowEqual } from 'react-redux'
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer
-  }
+    counter: counterReducer,
+  },
 })
 
 type GetStatenType = typeof store.getState

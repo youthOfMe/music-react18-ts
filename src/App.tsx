@@ -22,30 +22,30 @@ function App() {
   const { count, message } = useHYSelector(
     (state) => ({
       count: state.counter.count,
-      message: state.counter.message
+      message: state.counter.message,
     }),
-    shallowEqualApp
+    shallowEqualApp,
   )
 
   /** 时间处理函数 */
   function handleChangeMessage() {
     // console.log('handleChangeMessage')
-    dispatch(changeMessageAction("555"))
+    dispatch(changeMessageAction('555'))
   }
 
   return (
     <div className="App">
-      <div className='nav'>
-        <Link to='/discover'>发现音乐</Link>
-        <Link to='/mine'>我的音乐</Link>
-        <Link to='/focus'>我得关注</Link>
-        <Link to='/download'>下载客户端</Link>
+      <div className="nav">
+        <Link to="/discover">发现音乐</Link>
+        <Link to="/mine">我的音乐</Link>
+        <Link to="/focus">我得关注</Link>
+        <Link to="/download">下载客户端</Link>
       </div>
       <h2>当前计数: {count}</h2>
       <h2>当前消息: {message}</h2>
       <button onClick={handleChangeMessage}>改变消息</button>
       <Suspense fallback="">
-        <div className='main'>{useRoutes(routes)}</div>
+        <div className="main">{useRoutes(routes)}</div>
       </Suspense>
     </div>
   )

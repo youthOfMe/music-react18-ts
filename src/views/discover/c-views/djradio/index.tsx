@@ -5,9 +5,7 @@ interface IProps {
 }
 
 const Djradio: React.FC<IProps> = () => {
-  return (
-    <div>Djradio</div>
-  )
+  return <div>Djradio</div>
 }
 
 export default memo(Djradio)
