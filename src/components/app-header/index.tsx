@@ -56,7 +56,7 @@ const AppHerder: React.FC<IProps> = (props) => {
           </div>
         </HeaderLeft>
         <HeaderRight>
-          <Input></Input>
+          <Input className="search" placeholder="音乐/视频/电台/用户"></Input>
         </HeaderRight>
       </div>
       <div className="divider"></div>
