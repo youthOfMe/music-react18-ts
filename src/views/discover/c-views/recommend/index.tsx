@@ -21,30 +21,7 @@ interface IBannerData {
 const Recommend: React.FC<IProps> = () => {
   const [banners, setBanners] = useState<IBannerData[]>([])
 
-  useEffect(() => {
-    xhRequest
-      .get({
-        headers: new AxiosHeaders(),
-        url: '/banner',
-      })
-      .then((res) => {
-        console.log(res)
-        setBanners(res.banners)
-      })
-  }, [])
-
-  return (
-    <div>
-      推荐吖
-      {banners.map((item, index) => {
-        return (
-          <div key={index} style={{ color: 'red' }}>
-            {item.imageUrl}
-          </div>
-        )
-      })}
-    </div>
-  )
+  return <div>推荐吖</div>
 }
 
 export default memo(Recommend)

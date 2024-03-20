@@ -4,6 +4,7 @@ import { HeaderLeft, HeaderRight, HeaderWrapper } from './style'
 import { Input } from 'antd'
 import HeaderTitles from '@/assets/data/header-titles.json'
 import { NavLink } from 'react-router-dom'
+import { SearchOutlined } from '@ant-design/icons'
 
 interface IProps {
   children?: ReactNode
@@ -56,7 +57,13 @@ const AppHerder: React.FC<IProps> = (props) => {
           </div>
         </HeaderLeft>
         <HeaderRight>
-          <Input className="search" placeholder="音乐/视频/电台/用户"></Input>
+          <Input
+            className="search"
+            placeholder="音乐/视频/电台/用户"
+            prefix={<SearchOutlined />}
+          ></Input>
+          <span className="center">创作者中心</span>
+          <span className="login">登录</span>
         </HeaderRight>
       </div>
       <div className="divider"></div>
