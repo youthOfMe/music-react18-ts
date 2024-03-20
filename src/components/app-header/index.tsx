@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import type { ReactNode } from 'react'
 import { HeaderLeft, HeaderRight, HeaderWrapper } from './style'
-
+import { Input } from 'antd'
 import HeaderTitles from '@/assets/data/header-titles.json'
 import { NavLink } from 'react-router-dom'
 
@@ -55,7 +55,9 @@ const AppHerder: React.FC<IProps> = (props) => {
             })}
           </div>
         </HeaderLeft>
-        <HeaderRight></HeaderRight>
+        <HeaderRight>
+          <Input></Input>
+        </HeaderRight>
       </div>
       <div className="divider"></div>
     </HeaderWrapper>
