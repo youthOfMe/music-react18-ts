@@ -1,8 +1,8 @@
-import xhRequest from '@/service'
-import { AxiosHeaders } from 'axios'
 import React, { ReactNode, memo, useEffect, useState } from 'react'
 import { RecommendWrapper } from './style'
 import TopBanner from './c-cpns/top-banner'
+import { useAppDispatch } from '@/store'
+import { fetchBannerDataAction } from './store/recommend'
 
 interface IProps {
   children?: ReactNode
@@ -22,6 +22,10 @@ interface IBannerData {
 
 const Recommend: React.FC<IProps> = () => {
   const [banners, setBanners] = useState<IBannerData[]>([])
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(fetchBannerDataAction())
+  })
 
   return (
     <RecommendWrapper>
