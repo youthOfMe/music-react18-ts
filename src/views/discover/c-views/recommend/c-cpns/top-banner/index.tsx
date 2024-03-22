@@ -24,6 +24,16 @@ const TopBanner: React.FC<IProps> = () => {
     shallowEqualApp,
   )
 
+  /**
+   * 事件处理函数
+   */
+  function handlePrevClick() {
+    bannerRef.current?.prev()
+  }
+  function handleNextClick() {
+    bannerRef.current?.next()
+  }
+
   /** 获取背景图片 */
   let bgImage = ''
   if (currentIndex >= 0 && banners.length > 0) {
@@ -34,7 +44,7 @@ const TopBanner: React.FC<IProps> = () => {
     <BannerWrapper bgImage={bgImage}>
       <div className="banner wrap-v2">
         <BannerLeft>
-          <Carousel autoplay autoplaySpeed={2000} effect="fade">
+          <Carousel autoplay autoplaySpeed={2000} effect="fade" ref={bannerRef}>
             {banners.map((item) => {
               return (
                 <div className="banner-item" key={item.imageUrl}>
@@ -46,8 +56,8 @@ const TopBanner: React.FC<IProps> = () => {
         </BannerLeft>
         <BannerRight></BannerRight>
         <BannerControl>
-          <button className="btn left"></button>
-          <button className="btn right"></button>
+          <button className="btn left" onClick={handlePrevClick}></button>
+          <button className="btn right" onClick={handleNextClick}></button>
         </BannerControl>
       </div>
     </BannerWrapper>
