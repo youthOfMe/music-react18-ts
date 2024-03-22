@@ -14,7 +14,7 @@ type GetStatenType = typeof store.getState
 type IRootState = ReturnType<GetStatenType>
 type DispatchType = typeof store.dispatch
 
-export const useHYSelector: TypedUseSelectorHook<IRootState> = useSelector
+export const useAppSelector: TypedUseSelectorHook<IRootState> = useSelector
 export const useAppDispatch: () => DispatchType = useDispatch
 export const shallowEqualApp = shallowEqual
 

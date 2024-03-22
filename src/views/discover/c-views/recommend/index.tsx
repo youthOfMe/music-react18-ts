@@ -21,7 +21,6 @@ interface IBannerData {
 }
 
 const Recommend: React.FC<IProps> = () => {
-  const [banners, setBanners] = useState<IBannerData[]>([])
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchBannerDataAction())

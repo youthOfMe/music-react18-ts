@@ -1,7 +1,7 @@
 import React, { Suspense, memo } from 'react'
 import { Link, useRoutes } from 'react-router-dom'
 import routes from './router'
-import { useHYSelector, useAppDispatch, shallowEqualApp } from './store'
+import { useAppSelector, useAppDispatch, shallowEqualApp } from './store'
 import { changeMessageAction } from './store/modules/counter'
 import AppHeader from './components/app-header'
 // import type { IRootState } from './store'
@@ -20,7 +20,7 @@ import AppHeader from './components/app-header'
 function App() {
   const dispatch = useAppDispatch()
 
-  const { count, message } = useHYSelector(
+  const { count, message } = useAppSelector(
     (state) => ({
       count: state.counter.count,
       message: state.counter.message,
