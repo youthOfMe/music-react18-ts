@@ -5,6 +5,7 @@ import { useAppDispatch } from '@/store'
 import {
   fetchBannerDataAction,
   fetchHotRecommendAction,
+  fetchNewAlbumsAction,
   fetchPersonalRecommendAction,
 } from './store/recommend'
 import HotRecommend from './c-cpns/hot-recommend'
@@ -32,6 +33,7 @@ const Recommend: React.FC<IProps> = () => {
     dispatch(fetchBannerDataAction())
     dispatch(fetchHotRecommendAction())
     dispatch(fetchPersonalRecommendAction())
+    dispatch(fetchNewAlbumsAction())
   })
 
   return (
