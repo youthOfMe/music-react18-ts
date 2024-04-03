@@ -2,6 +2,7 @@ import React, { ElementRef, ReactNode, memo, useCallback, useRef, useState } fro
 import { BannerControl, BannerLeft, BannerRight, BannerWrapper } from './style'
 import { Carousel } from 'antd'
 import { shallowEqualApp, useAppSelector } from '@/store'
+import classNames from 'classnames'
 
 interface IProps {
   children?: ReactNode
@@ -33,6 +34,10 @@ const TopBanner: React.FC<IProps> = () => {
   function handleNextClick() {
     bannerRef.current?.next()
   }
+  function changeActiveBannerItem(index: number) {
+    bannerRef.current?.goTo(index)
+    setCurrentIndex(index)
+  }
 
   /** 事件监听的方法 */
   const handleAfterChange = useCallback(
@@ -58,6 +63,7 @@ const TopBanner: React.FC<IProps> = () => {
             effect="fade"
             ref={bannerRef}
             afterChange={handleAfterChange}
+            dots={false}
           >
             {banners.map((item) => {
               return (
@@ -67,6 +73,19 @@ const TopBanner: React.FC<IProps> = () => {
               )
             })}
           </Carousel>
+          <ul className="dots">
+            {banners.map((item, index) => {
+              return (
+                <li key={item.imageUrl} onClick={() => changeActiveBannerItem(index)}>
+                  <span
+                    className={classNames('item', {
+                      active: index === currentIndex,
+                    })}
+                  ></span>
+                </li>
+              )
+            })}
+          </ul>
         </BannerLeft>
         <BannerRight></BannerRight>
         <BannerControl>
