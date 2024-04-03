@@ -3,6 +3,7 @@ import { RecommendWrapper } from './style'
 import TopBanner from './c-cpns/top-banner'
 import { useAppDispatch } from '@/store'
 import { fetchBannerDataAction } from './store/recommend'
+import HotRecommend from './c-cpns/hot-recommend'
 
 interface IProps {
   children?: ReactNode
@@ -30,7 +31,9 @@ const Recommend: React.FC<IProps> = () => {
     <RecommendWrapper>
       <TopBanner></TopBanner>
       <div className="content wrap-v2">
-        <div className="left"></div>
+        <div className="left">
+          <HotRecommend></HotRecommend>
+        </div>
         <div className="right"></div>
       </div>
     </RecommendWrapper>
