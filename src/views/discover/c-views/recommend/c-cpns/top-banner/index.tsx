@@ -36,7 +36,6 @@ const TopBanner: React.FC<IProps> = () => {
   }
   function changeActiveBannerItem(index: number) {
     bannerRef.current?.goTo(index)
-    setCurrentIndex(index)
   }
 
   /** 事件监听的方法 */
