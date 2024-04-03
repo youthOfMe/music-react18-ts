@@ -8,25 +8,20 @@ interface IProps {
   children?: ReactNode
 }
 
-const HotRecommend: React.FC<IProps> = () => {
-  const { hotRecommends } = useAppSelector((state) => ({
-    hotRecommends: state.recommmend.hotRecommends,
+const PersonalRecommend: React.FC<IProps> = () => {
+  const { personalRecommends } = useAppSelector((state) => ({
+    personalRecommends: state.recommmend.personalRecommends,
   }))
 
   return (
     <RecommendWrapper>
-      <AreaHeaderV1
-        title="热门推荐"
-        keywords={['华语', '流行', '摇滚', '民谣', '电子']}
-        moreLink="/discover/songs"
-      ></AreaHeaderV1>
+      <AreaHeaderV1 title="个性推荐" keywords={[]}></AreaHeaderV1>
       <div className="recommend-list">
-        {hotRecommends.map((item) => {
+        {personalRecommends.map((item) => {
           return <SongsMenuItem key={item.id} itemData={item}></SongsMenuItem>
         })}
       </div>
     </RecommendWrapper>
   )
 }
-
-export default memo(HotRecommend)
+export default memo(PersonalRecommend)

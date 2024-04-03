@@ -18,6 +18,14 @@ export const fetchHotRecommendAction = createAsyncThunk(
   },
 )
 
+export const fetchPersonalRecommendAction = createAsyncThunk(
+  'recommend/hotRecommend',
+  async (args, { dispatch }) => {
+    const res = await getHotRecommend(4)
+    dispatch(changePersonalRecommendsAction(res.result))
+  },
+)
+
 interface IRecomendState {
   banners: {
     imageUrl: string
@@ -31,11 +39,13 @@ interface IRecomendState {
     bannerBizType: string
   }[]
   hotRecommends: any[]
+  personalRecommends: any[]
 }
 
 const initialState: IRecomendState = {
   banners: [],
   hotRecommends: [],
+  personalRecommends: [],
 }
 
 const recommendSlice = createSlice({
@@ -48,9 +58,13 @@ const recommendSlice = createSlice({
     changeHotRecommendsAction(state, { payload }) {
       state.hotRecommends = payload
     },
+    changePersonalRecommendsAction(state, { payload }) {
+      state.personalRecommends = payload
+    },
   },
 })
 
-export const { changeBannersAction, changeHotRecommendsAction } = recommendSlice.actions
+export const { changeBannersAction, changeHotRecommendsAction, changePersonalRecommendsAction } =
+  recommendSlice.actions
 
 export default recommendSlice.reducer
