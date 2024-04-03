@@ -1,4 +1,4 @@
-import React, { ElementRef, ReactNode, memo, useRef, useState } from 'react'
+import React, { ElementRef, ReactNode, memo, useCallback, useRef, useState } from 'react'
 import { BannerControl, BannerLeft, BannerRight, BannerWrapper } from './style'
 import { Carousel } from 'antd'
 import { shallowEqualApp, useAppSelector } from '@/store'
@@ -34,6 +34,14 @@ const TopBanner: React.FC<IProps> = () => {
     bannerRef.current?.next()
   }
 
+  /** 事件监听的方法 */
+  const handleAfterChange = useCallback(
+    (current: number) => {
+      setCurrentIndex(current)
+    },
+    [currentIndex],
+  )
+
   /** 获取背景图片 */
   let bgImage = ''
   if (currentIndex >= 0 && banners.length > 0) {
@@ -44,7 +52,13 @@ const TopBanner: React.FC<IProps> = () => {
     <BannerWrapper bgImage={bgImage}>
       <div className="banner wrap-v2">
         <BannerLeft>
-          <Carousel autoplay autoplaySpeed={2000} effect="fade" ref={bannerRef}>
+          <Carousel
+            autoplay
+            autoplaySpeed={2000}
+            effect="fade"
+            ref={bannerRef}
+            afterChange={handleAfterChange}
+          >
             {banners.map((item) => {
               return (
                 <div className="banner-item" key={item.imageUrl}>
