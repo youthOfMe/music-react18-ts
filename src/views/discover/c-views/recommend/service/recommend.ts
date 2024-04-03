@@ -8,7 +8,7 @@ export function getBanners() {
   })
 }
 
-export function getHomeRecommend(limit = 30) {
+export function getHotRecommend(limit = 30) {
   return xhRequest.get({
     headers: new AxiosHeaders(),
     url: '/personalized',
