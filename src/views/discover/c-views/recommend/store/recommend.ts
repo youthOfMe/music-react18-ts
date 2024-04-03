@@ -38,8 +38,32 @@ interface IRecomendState {
     scm: string
     bannerBizType: string
   }[]
-  hotRecommends: any[]
-  personalRecommends: any[]
+  hotRecommends: {
+    id: number
+    type: number
+    name: string
+    copywriter: any
+    picUrl: string
+    canDislike: boolean
+    trackNumberUpdateTime: number
+    playCount: number
+    trackCount: number
+    highQuality: boolean
+    alg: string
+  }[]
+  personalRecommends: {
+    id: number
+    type: number
+    name: string
+    copywriter: any
+    picUrl: string
+    canDislike: boolean
+    trackNumberUpdateTime: number
+    playCount: number
+    trackCount: number
+    highQuality: boolean
+    alg: string
+  }[]
 }
 
 const initialState: IRecomendState = {
