@@ -1,5 +1,6 @@
 import React, { ReactNode, memo } from 'react'
 import { MenuItemWrapper } from './style'
+import { formatCount, getImageSize } from '@/utils/format'
 
 interface IProps {
   children?: ReactNode
@@ -11,7 +12,19 @@ const SongMenuItem: React.FC<IProps> = (props) => {
 
   return (
     <MenuItemWrapper>
-      <div className="top"></div>
+      <div className="top">
+        <img src={getImageSize(itemData.picUrl, 140, 140)} />
+        <div className="cover sprite">
+          <div className="info sprite_cover">
+            <span>
+              <i className="sprite_icon headset"></i>
+              <span className="count">{formatCount(itemData.playCount)}</span>
+            </span>
+            <i className="sprite_icon play"></i>
+          </div>
+        </div>
+      </div>
+      <div className="bottom"></div>
     </MenuItemWrapper>
   )
 }
