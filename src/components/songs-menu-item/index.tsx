@@ -14,7 +14,7 @@ const SongMenuItem: React.FC<IProps> = (props) => {
     <MenuItemWrapper>
       <div className="top">
         <img src={getImageSize(itemData.picUrl, 140, 140)} />
-        <div className="cover sprite">
+        <div className="cover sprite_cover">
           <div className="info sprite_cover">
             <span>
               <i className="sprite_icon headset"></i>

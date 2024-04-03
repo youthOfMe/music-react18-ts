@@ -11,7 +11,7 @@ interface IProps {
 }
 
 const AreaHeaderV1: React.FC<IProps> = (props) => {
-  const { title = '默认标题', keywords = [], moreText = '更多', moreLink = '/' } = props
+  const { title = '默认标题', keywords = [], moreText = '', moreLink = '' } = props
 
   return (
     <HeaderV1Wrapper className="sprite_02">
@@ -32,7 +32,7 @@ const AreaHeaderV1: React.FC<IProps> = (props) => {
         <Link className="more" to={moreLink}>
           {moreText}
         </Link>
-        <i className="sprite_02 icon"></i>
+        {moreLink ? <i className="sprite_02 icon"></i> : ''}
       </div>
     </HeaderV1Wrapper>
   )
