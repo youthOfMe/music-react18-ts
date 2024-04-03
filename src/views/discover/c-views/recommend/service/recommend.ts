@@ -7,3 +7,13 @@ export function getBanners() {
     url: '/banner',
   })
 }
+
+export function getHomeRecommend(limit = 30) {
+  return xhRequest.get({
+    headers: new AxiosHeaders(),
+    url: '/personalized',
+    params: {
+      limit,
+    },
+  })
+}
