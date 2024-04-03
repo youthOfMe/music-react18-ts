@@ -17,3 +17,10 @@ export function getHotRecommend(limit = 30) {
     },
   })
 }
+
+export function getNewAlbum() {
+  return xhRequest.get({
+    headers: new AxiosHeaders(),
+    url: '/album/newest',
+  })
+}
