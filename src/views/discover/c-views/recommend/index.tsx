@@ -10,6 +10,7 @@ import {
 } from './store/recommend'
 import HotRecommend from './c-cpns/hot-recommend'
 import PersonalRecommend from './c-cpns/personal-recommend'
+import NewAlbum from './c-cpns/new-album'
 
 interface IProps {
   children?: ReactNode
@@ -43,6 +44,7 @@ const Recommend: React.FC<IProps> = () => {
         <div className="left">
           <HotRecommend></HotRecommend>
           <PersonalRecommend></PersonalRecommend>
+          <NewAlbum></NewAlbum>
         </div>
         <div className="right"></div>
       </div>

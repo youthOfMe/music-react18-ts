@@ -3,6 +3,7 @@ import { AlbumWrapper } from './style'
 import AreaHeaderV1 from '@/components/area-header-v1'
 import { Carousel } from 'antd'
 import { useAppSelector } from '@/store'
+import NewAlbumItem from '@/components/new-album-item'
 
 interface IProps {
   children?: ReactNode
@@ -27,7 +28,7 @@ const NewAblums: React.FC<IProps> = () => {
                   {/* 必须进行嵌套一层 Carousel会给一个内联样式 inline-block(直接子集) 是希望可以沾满父元素 */}
                   <div className="album-list">
                     {newAlbums.slice(item * 5, (item + 1) * 5).map((album) => {
-                      return 1
+                      return <NewAlbumItem key={album.id} itemData={album}></NewAlbumItem>
                     })}
                   </div>
                 </div>
@@ -35,6 +36,7 @@ const NewAblums: React.FC<IProps> = () => {
             })}
           </Carousel>
         </div>
+        <button className="arrow arrow-right sprite_02"></button>
       </div>
     </AlbumWrapper>
   )
