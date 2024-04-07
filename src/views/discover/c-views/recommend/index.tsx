@@ -7,6 +7,7 @@ import {
   fetchHotRecommendAction,
   fetchNewAlbumsAction,
   fetchPersonalRecommendAction,
+  fetchRankingDataAction,
 } from './store/recommend'
 import HotRecommend from './c-cpns/hot-recommend'
 import PersonalRecommend from './c-cpns/personal-recommend'
@@ -35,6 +36,7 @@ const Recommend: React.FC<IProps> = () => {
     dispatch(fetchHotRecommendAction())
     dispatch(fetchPersonalRecommendAction())
     dispatch(fetchNewAlbumsAction())
+    dispatch(fetchRankingDataAction())
   })
 
   return (
