@@ -24,3 +24,13 @@ export function getNewAlbum() {
     url: '/album/newest',
   })
 }
+
+export function getPlaylistDetail(id: number) {
+  return xhRequest.get({
+    headers: new AxiosHeaders(),
+    url: '/playlist/detail',
+    params: {
+      id,
+    },
+  })
+}
