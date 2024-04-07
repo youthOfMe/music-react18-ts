@@ -1,6 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { getBanners, getHotRecommend, getNewAlbum, getPlaylistDetail } from '../service/recommend'
-import { BannersType, HotRecommendsType, NewAlbumsType, PersonalRecommendsType } from './type'
+import {
+  BannersType,
+  HotRecommendsType,
+  NewAlbumsType,
+  PersonalRecommendsType,
+  PlayList,
+} from './type'
 
 export const fetchBannerDataAction = createAsyncThunk(
   'recommend/banners',
@@ -71,7 +77,7 @@ interface IRecomendState {
   hotRecommends: HotRecommendsType
   personalRecommends: PersonalRecommendsType
   newAlbums: NewAlbumsType
-  rankings: any[]
+  rankings: PlayList[]
 }
 
 const initialState: IRecomendState = {
