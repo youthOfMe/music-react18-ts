@@ -15,7 +15,7 @@ const TopRankingItem: React.FC<IProps> = (props) => {
     <RankingItemWrapper>
       <div className="header">
         <div className="image">
-          <img src={getImageSize(itemData.coverImge, 80, 80)} alt="" />
+          <img src={getImageSize(itemData.coverImgUrl, 80, 80)} alt="" />
           <a href="" className="sprite_cover"></a>
         </div>
         <div className="info">
