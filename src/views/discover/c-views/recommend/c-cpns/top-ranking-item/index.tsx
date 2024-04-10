@@ -4,6 +4,7 @@ import { getImageSize } from '@/utils/format'
 
 interface IProps {
   children?: ReactNode
+  itemData?: any
 }
 
 const TopRankingItem: React.FC<IProps> = (props) => {
